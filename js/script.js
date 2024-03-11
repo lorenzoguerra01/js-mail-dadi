@@ -20,9 +20,11 @@ elBtnVerify.addEventListener("click", function () {
     for (let i = 0; i < existing.length; i++) {
         if (mail === existing[i]) {
             tempReply = "Access allowed, Welcome Back!"
+            reply.className = "text-success";
         } else if (tempReply === "Access allowed, Welcome Back!") {
         } else {
             tempReply = "Access Denied, Try Again!"
+            reply.className = "text-danger"
         }
         console.log("tempReply= " + tempReply)
         console.log("mail= " + mail);
