@@ -15,6 +15,7 @@ let elBtnVerify = document.getElementById('btn-verify');
 let reply = document.querySelector(".reply")
 
 elBtnVerify.addEventListener("click", function () {
+    
     let tempReply
     let mail = elMail.value;
     for (let i = 0; i < existing.length; i++) {
@@ -35,3 +36,24 @@ elBtnVerify.addEventListener("click", function () {
     reply.innerHTML = tempReply;
 
 });
+
+let elBtnPlay = document.getElementById('btn-play');
+
+elBtnPlay.addEventListener("click", function () {
+    let userNum = getRndInteger (1, 6);
+    let cpuNum = getRndInteger (1, 6);
+
+    console.log(userNum);
+    console.log(cpuNum);
+
+    if (userNum === cpuNum) {
+        reply.innerHTML = "Nobody Won :| "
+        reply.className = "";
+    } else if (userNum > cpuNum) {
+        reply.innerHTML = "You Won :) "
+        reply.className = "text-success";
+    } else {
+        reply.innerHTML = "You Lose :( "
+        reply.className = "text-danger"
+    }
+})
