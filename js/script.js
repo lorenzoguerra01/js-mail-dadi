@@ -8,5 +8,28 @@
 
 // mail 
 
-let mail = document.getElementById("mail").value
-let existing
+
+let elMail = document.getElementById("mail")
+let existing = ["francesco@gmail.com", "alessio@gmail.com", "paolo@gmail.com", "luca@gmail.com", "gabriele@gmail.com", "lorenzo@gmail.com", "davide@gmail.com",]
+let elBtnVerify = document.getElementById('btn-verify');
+let reply = document.querySelector(".reply")
+
+elBtnVerify.addEventListener("click", function () {
+    let tempReply
+    let mail = elMail.value;
+    for (let i = 0; i < existing.length; i++) {
+        if (mail === existing[i]) {
+            tempReply = "Access allowed, Welcome Back!"
+        } else if (tempReply === "Access allowed, Welcome Back!") {
+        } else {
+            tempReply = "Access Denied, Try Again!"
+        }
+        console.log("tempReply= " + tempReply)
+        console.log("mail= " + mail);
+        console.log("reply= " + reply);
+        console.log("i= " + i);    
+    }
+    
+    reply.innerHTML = tempReply;
+
+});
